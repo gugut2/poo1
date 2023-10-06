@@ -18,7 +18,6 @@ public class MaquinaDeBebidas {
 	public void exibirInformacoes() {
 		System.out.println("Voce selecionou: " + this.tipo);
 		System.out.println("Custa " + this.preco);
-		System.out.println("Ate a proxima!");
 	}
 	
 	// Método para Escolher bebida
@@ -73,7 +72,9 @@ public class MaquinaDeBebidas {
 		minhaBebida.escolherBebida();
 		
 		// Exibição de informação
-		minhaBebida.exibirInformacoes();	
+		minhaBebida.exibirInformacoes();
+		
+		System.out.println("Ate a proxima!");
 	}
 }
 
