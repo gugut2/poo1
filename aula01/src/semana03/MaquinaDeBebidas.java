@@ -56,13 +56,14 @@ public class MaquinaDeBebidas {
 				this.preco = 2.50;
 			break;
 			
+			//Caso escolha opção que não existe
 			default: System.out.println("Nao existe essa bebida, escolha outra: ");
 			this.escolherBebida();
 		}
 	}
 	
 	public static void main(String[] args) {
-		// Construtor de Bebida
+		// Instancia de Bebida
 		MaquinaDeBebidas minhaBebida = new MaquinaDeBebidas(null, 0, 0);
 		
 		// Bem vindo
