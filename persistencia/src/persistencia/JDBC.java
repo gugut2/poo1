@@ -16,13 +16,12 @@ public class JDBC {
 			Connection conexao = DriverManager.getConnection(url, usuario, senha);
 			if (conexao != null) {
 				System.out.println("Conexao bem-sucedida");
-				conexao.close();
 			} else {
 				System.out.println("Falha na conexao.");
 			}
 			
 			Statement statement = conexao.createStatement();
-			String consultaSQL = "SELECT * FROM nome_da_tabela";
+			String consultaSQL = "SELECT * FROM produto";
 			ResultSet resultado = statement.executeQuery(consultaSQL);
 			while(resultado.next()) {
 				int id = resultado.getInt("id");
@@ -33,6 +32,7 @@ public class JDBC {
 			resultado.close();
 			statement.close();
 		} catch (SQLException e) {
+			e.printStackTrace();
 			System.out.println("Erro na conexão com o banco de dados: " + e.getMessage());
 		}
 	}
