@@ -5,13 +5,12 @@ public class MaquinaDeBebidas {
 	// Atributos
 	private String tipo;
 	private double preco;
-	private int bebidaEscolhida;
 	
 	//Construtor
-	public MaquinaDeBebidas(String tipo, double preco, int bebidaEscolhida) {
+	public MaquinaDeBebidas(String tipo, double preco) {
 		this.tipo = tipo;
 		this.preco = preco;
-		this.bebidaEscolhida = bebidaEscolhida;
+
 	}
 		
 	// Método para exibir info da bebida
@@ -25,6 +24,8 @@ public class MaquinaDeBebidas {
 		// Inicializando Scanner para input do usuario
 		Scanner scanner = new Scanner(System.in);
 		
+		int bebidaEscolhida;
+		
 		System.out.println("Escolha uma das bebidas abaixo");
 		System.out.println("\n-------------");
 		System.out.println("1. Refrigerante");
@@ -32,10 +33,10 @@ public class MaquinaDeBebidas {
 		System.out.println("3. Suco de Laranja");
 		System.out.println("4. Cafe");
 		
-		this.bebidaEscolhida = scanner.nextInt();
+		bebidaEscolhida = scanner.nextInt();
 		
 		// Checagem de casos
-		switch(this.bebidaEscolhida) {
+		switch(bebidaEscolhida) {
 			case 1: 
 				this.tipo = "Refrigerante";
 				this.preco = 3.50;
@@ -64,7 +65,7 @@ public class MaquinaDeBebidas {
 	
 	public static void main(String[] args) {
 		// Instancia de Bebida
-		MaquinaDeBebidas minhaBebida = new MaquinaDeBebidas(null, 0, 0);
+		MaquinaDeBebidas minhaBebida = new MaquinaDeBebidas(null, 0);
 		
 		// Bem vindo
 		System.out.println("Bem vindo a maquina de vendas de bebidas!");
