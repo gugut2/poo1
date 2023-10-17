@@ -6,11 +6,11 @@ public class MaquinaDeBebidas {
 	private String tipo;
 	private double preco;
 	
+	
 	//Construtor
 	public MaquinaDeBebidas(String tipo, double preco) {
 		this.tipo = tipo;
 		this.preco = preco;
-
 	}
 		
 	// Método para exibir info da bebida
@@ -23,7 +23,6 @@ public class MaquinaDeBebidas {
 	public void escolherBebida() {
 		// Inicializando Scanner para input do usuario
 		Scanner scanner = new Scanner(System.in);
-		
 		int bebidaEscolhida;
 		
 		System.out.println("Escolha uma das bebidas abaixo");
@@ -61,6 +60,7 @@ public class MaquinaDeBebidas {
 			default: System.out.println("Nao existe essa bebida, escolha outra: ");
 			this.escolherBebida();
 		}
+		
 	}
 	
 	public static void main(String[] args) {
@@ -71,10 +71,24 @@ public class MaquinaDeBebidas {
 		System.out.println("Bem vindo a maquina de vendas de bebidas!");
 		
 		// Escolha uma bebida
-		minhaBebida.escolherBebida();
-		
-		// Exibição de informação
-		minhaBebida.exibirInformacoes();
+		int escolhendoBebida = 1;
+		int certeza = 1;
+		Scanner scanner = new Scanner(System.in);
+		while(escolhendoBebida == 1){
+			minhaBebida.escolherBebida();
+
+			// Exibição de informação
+			minhaBebida.exibirInformacoes();
+
+			System.out.println("Tem certeza de sua escolha? 1=S / 0=N");
+			certeza = scanner.nextInt();
+			if(certeza == 1)
+			{
+				escolhendoBebida = 0;
+			} else {
+				escolhendoBebida = 1;
+			}
+		}
 		
 		System.out.println("Ate a proxima!");
 	}
